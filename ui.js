@@ -32,6 +32,8 @@ class UI {
       <div id="repos"></div>
     `;
   }
+  //Show Alert Message
+
 
   clearProfile(){
     this.profile.innerHTML='';
