@@ -34,6 +34,8 @@ class UI {
   }
   //Show Alert Message
   showAlert(message, className){
+    //Clear any remaining alerts
+    this.clearAlert();
     //Create div
     const div = document.createElement('div');
     //Add classes
@@ -47,8 +49,23 @@ class UI {
     //Insert alert
     container.insertBefore(div, search);
 
+    //Timeout after 3 seconds
+    setTimeout(()=>{
+      this.clearAlert();
+    }, 3000);
   }
 
+  //Clear Alert
+  clearAlert(){
+    const currentAlert = document.querySelector('.alert');
+
+    if(currentAlert){
+      currentAlert.remove();
+    }
+  }
+
+
+  //Clear Profile
   clearProfile(){
     this.profile.innerHTML='';
   }
